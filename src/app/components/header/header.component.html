@@ -1,0 +1,28 @@
+<div  class="head__container">
+
+    <div class="head">
+        <div class="head__title">
+            <h2>App</h2>
+        </div>
+        <div (click)="isActive = !isActive" class="head__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <nav [className]="isActive ? 'show' : 'hide'">
+        <ul>
+            <li *ngFor="let item of Items">
+                <a [className]="item.Items.length > 0 ? 'arrow' : ''" >{{ item.Title }}</a>
+                <ul class="head__sub__menu">
+                    <li *ngFor="let subItem of item.Items" >
+                        <a>
+                            {{ subItem.Title }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

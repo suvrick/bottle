@@ -1,0 +1,31 @@
+.container{
+   // max-width: 900px;
+    margin: auto;
+}
+
+.flex__container{
+    display: flex;
+}
+
+.left__flex__block{
+    flex: 0 0 300px;
+    background: #ccc;
+    padding: 0 15px;
+}
+
+.right__flex__block{
+    flex: 1 1 auto;
+    background: #cccccc94;
+    padding: 0 15px;
+    height: 100vh;
+}
+
+@media all and(max-width: 500px) {
+    .flex__container {
+        flex-direction: column;
+    }
+
+    .left__flex__block {
+        flex: 1 1 auto;
+    }
+}
