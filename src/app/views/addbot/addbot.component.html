@@ -1,0 +1,17 @@
+
+<h1 class="h__title">Добавить</h1>
+<div class="container">
+<pre class="tip_text">
+Ссылка на фрейм игры
+<i>
+Пример ссылки:
+    https://bottle2.itsrealgames.com/.......
+    https://m.inspin.me/build/v1404/?......
+</i>
+</pre>
+<label for="urlTxt">Ссылка</label>
+<input [(ngModel)]="Url" id="urlTxt" required type="text">
+<p>
+    <button class="btn btn_primary" (click)="onAdd()" >Добавить</button>
+</p>
+</div>

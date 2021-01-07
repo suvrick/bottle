@@ -2,22 +2,25 @@
 
     <div class="head">
         <div class="head__title">
-            <h2>App</h2>
+            <h2 (click)="nav.Do('toHome')" >App</h2>
         </div>
-        <div (click)="isActive = !isActive" class="head__burger">
+        <div (click)="nav.IsActiveMenu = !nav.IsActiveMenu" class="head__burger">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
 
-    <nav [className]="isActive ? 'show' : 'hide'">
+    <nav [className]="nav.IsActiveMenu ? 'show' : 'hide'">
         <ul>
-            <li *ngFor="let item of Items">
-                <a [className]="item.Items.length > 0 ? 'arrow' : ''" >{{ item.Title }}</a>
+            <li *ngFor="let item of nav.Items">
+                <a (click)="nav.Do(item.Action)" [className]="item.Items?.length > 0 ? 'arrow' : ''" >
+                    <i class="material-icons">{{ item.Icon }}</i>
+                    {{ item.Title }}
+                </a>
                 <ul class="head__sub__menu">
                     <li *ngFor="let subItem of item.Items" >
-                        <a>
+                        <a (click)="nav.Do(subItem.Action)">
                             {{ subItem.Title }}
                         </a>
                     </li>

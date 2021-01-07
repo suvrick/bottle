@@ -1,6 +1,8 @@
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    font-family: 'Noto Sans';
 }
 
 .head__container {
@@ -15,6 +17,9 @@ a {
     .head__title{
         h2 {
             text-transform: uppercase;
+            margin-left: 20px;
+            color: aliceblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
     }
     .head__burger{
@@ -27,7 +32,7 @@ a {
             height: 2px;
             width: 40px;
             margin: 5px;
-            border-top: 4px solid #888;
+            border-top: 4px solid aliceblue;
         }
     }
 }
@@ -37,6 +42,7 @@ a {
 nav {
     display: flex;
     padding: 20px 0;
+    height: 100vh;
     ul {
         flex: 1 1 auto;
         display: flex;
@@ -51,20 +57,30 @@ nav {
 
             a {
                 flex: 1 1 auto;
+                display: flex;
                 padding: 15px;
-                text-decoration: none;
+                color: #ffeeee;
 
                 &:hover {
+                    color: #ffffff;
                     background:  #00000020;
+                }
+
+                i {
+                    padding: 0 5px;
                 }
             }
 
             .head__sub__menu {
                 display: flex;
                 flex-direction: column;
-                margin-left: 15px;
+                margin-left: 55px;
                 li {
                     flex: 1 1 auto;
+                    a {
+                        font-family: 'Source Sans Pro';
+                        padding: 10px;
+                    }
                 }
             }
         }
@@ -76,14 +92,14 @@ nav {
 }
 
 .arrow::before {
-    content: '⮯';
-    font-size: 20px;
-    top: 5px;
-    text-align: center;
+    content: '\2BAF';
+    
     position: absolute;
-    float: right;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    top: 10px;
     right: 15px;
-    color: #00000040;
 }
 
 @media all and (max-width: 500px) {

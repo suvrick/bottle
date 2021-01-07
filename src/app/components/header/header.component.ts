@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigatorService } from 'src/app/services/navigator.service';
 
 @Component({
   selector: 'app-header',
@@ -9,37 +10,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-  Items: MenuItem[]
-  isActive = false
-  constructor() { 
-    
+
+  nav: NavigatorService
+  constructor(private navigator: NavigatorService) { 
+    this.nav = navigator
   }
 
   ngOnInit(): void {
-    this.Items = [
-      { Title: "Главная", Action: "onLoad", Items: []},
-      { Title: "Добавить", Action: "onLoad", Items: [
-        { Title: "Добавить ссылкой", Action: "onLoad", Items: []},
-        { Title: "Загрузить из файла", Action: "onLoad", Items: []}
-      ]},
-      { Title: "Действие", Action: "onLoad", Items: [
-        { Title: "Обновить", Action: "onLoad", Items: []},
-        { Title: "Отправить подарок", Action: "onLoad", Items: []}
-      ]},
-      { Title: "Настройки", Action: "onLoad", Items: []}
-    ]
-
-    console.log(this.Items)
+    console.log(this.nav.Items)
   }
 
   onLoad() {
-    this.isActive = false
+
   }
 
-}
-
-export class MenuItem {
-  Title: string
-  Action: string
-  Items: Array<MenuItem>
 }
